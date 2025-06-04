@@ -292,9 +292,6 @@ class Xmipp:
         if isinstance(coordinates,np.ndarray):
             coordinates = AtomLine.to_pdb(coordinates, self.out_dir / "coordinates.pdb")
         if isinstance(coefficients, str):
-            _coef_path = self.out_dir / f"{label}.txt"
-            with open(_coef_path,'w') as coef_file:
-                coef_file.write(coefficients)
             coefficients = self.deformation_clnm(coefficients)
         deformed_path = self.out_dir / f'{label}.pdb'
         self.run('xmipp_pdb_sph_deform',
