@@ -162,7 +162,6 @@ class Xmipp:
                 f'-i {pdb}',
                 '--sampling 1.000000',
                 f"-o {volume_path.with_suffix('')}",
-                '--centerPDB',
                 f'--size {self.grid_size} {self.grid_size} {self.grid_size}',
                 '--verbose 0')
         return volume_path
